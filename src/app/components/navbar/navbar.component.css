@@ -1,0 +1,59 @@
+.navbar{
+    background-color:black !important;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 1;
+}
+.navbarHead{
+    margin-left:5%; 
+    font-weight: 600;
+    font-size: 22px;
+}
+.navbarContainer{
+    margin-right:2%;
+    color:black !important;
+}
+.navbarList{
+    margin-right:5%;
+    width:100%;
+    font-size: 16px;
+    font-weight: 500;
+}
+.username{
+    font-size: 17px;    
+    font-weight: 500;
+    color:white;
+    margin-right:5%;
+}
+.navbarList>a{
+    color:white;
+}
+.navbarList>a:hover{
+    color:#caccce;
+}
+.navbar-nav{
+    margin-right:15%;
+}
+.navbarListLogout{
+    margin-right: 5%;
+    margin-left: 50%;
+}
+.navbarListLogout>a{
+
+    color: white;
+}
+.navbarListLogout>a:hover{
+    color:#caccce;
+    text-decoration: none;
+}
+.img{
+    margin-left: 10%;
+   }
+  
+
+   .logout{
+    margin-left: 500%; 
+   }
+
+   

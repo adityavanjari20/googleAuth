@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+<div class="container">
+
+    <br><br>
+    <button type="submit"   class="fas fa-arrow-alt-circle-left" (click)="goToAdmin()" style="border-radius: 10px; border-color: green; background-color: blanchedalmond;"></button>
+        <div *ngIf="client" class="table-responsive-md " id="">
+           
+            
+              <table class="table table-borderles table-hover"  id="excel-table" style="margin-top: 10px;">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Amount_left</th>
+                        <th>Action</th>
+                      
+                       
+                    </tr>
+                </thead>
+    
+                <tbody>
+                    <tr *ngFor="let elements of client | async " >
+                        
+                        <td>{{elements.name}}</td>
+                        <td>{{elements.email}}</td>
+                        <td>{{elements.phone}}</td>
+                        <td>{{elements.amount_left}}</td>
+                        
+                        <td><button type="submit" class="btn btn-outline-success"  (click)="gethistory(elements.email)" >Get-History</button></td>
+    
+                    </tr>
+    
+                </tbody>
+            </table>
+        </div>
+              
+    
+        <p *ngIf="!client" class="noData">
+            Nothing available 
+        </p>
+    </div>
+    
+    
+    
+    

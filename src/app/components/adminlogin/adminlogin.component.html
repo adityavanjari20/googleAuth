@@ -1,0 +1,46 @@
+<div class="login bgimg">
+    
+    <form (ngSubmit)="checkAdminLogin(mailid,password)">
+        <div class="card align-items-center container containerLogin">
+            <div class="formElements">
+                <div *ngIf=invalidLogin class="text-danger">
+                        <br/> {{errorMessage}}<br/>
+                </div>
+                
+               
+                
+<br>
+                <div class="mailId">
+                    <label>Mail ID</label>
+                    <input type="email" required class="form-control" name="mailid" 
+                        [(ngModel)]=mailid #mail="ngModel" minlength="3" email>
+                    
+                    <div *ngIf="mail.invalid; else elseBlock" class="text-danger warningMessage">
+                        <div *ngIf="mail.errors.minlength">
+                            Minimum 3 character required
+                        </div>
+                        <div *ngIf="mail.errors.email && !mail.errors.minlength">
+                            Enter a valid Mail ID
+                        </div>
+                    </div>
+                </div>
+
+                <div class="password">
+                    <br/><label>Enter Password</label>
+                    <input type="password" class="form-control" name="password" 
+                        [(ngModel)]="password" #pass="ngModel" required minlength="3">
+
+                    <div *ngIf="pass.invalid" class="text-danger warningMessage">
+                        <div *ngIf="pass.errors.minlength">
+                            Minimum 3 character required
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <br/><button type="submit" [disabled]="checkValidLogin(mail,pass)" class="btn btn-primary">Submit</button><br/>
+        </div>
+    </form>
+
+</div>
+

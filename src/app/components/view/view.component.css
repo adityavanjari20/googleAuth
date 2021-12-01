@@ -1,0 +1,32 @@
+.card
+{
+    height:520px;
+    margin-left:40px;
+    width:100px;
+    padding-left:50px;
+    padding-top: 30px;
+    margin-top:-2%;
+    box-shadow: 0 15px 15px 0 rgba(0,0,0,0.4);
+    background-color: #E2E0E0
+}
+.heading
+{
+    text-align:center;
+}
+.company-details label
+{
+    font-weight: 600;
+    color:rgb(43, 43, 40)
+}
+.company-details p
+{
+    font-weight: 600;
+    color:rgb(202, 108, 46)
+}
+.buy-btn
+{
+    width:150px;
+    font-weight: 600;
+    font-size: 18px;
+    margin-left:-10%;
+}

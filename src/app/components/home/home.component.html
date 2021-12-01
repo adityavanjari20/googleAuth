@@ -1,0 +1,274 @@
+<!-- //After Login -->
+<div style="margin-bottom: 160px; margin-top: 50px;">
+<div class="container-fluid" >
+  <div class="afterlogin" *ngIf="loginService.isUserLoggedIn()" >
+
+
+    <div class="row">
+      <div id="siteInfo" style="margin-left: 40%;">
+        <input class="form-control" type="text" name="name" [(ngModel)]="name" (ngModelChange)="Search()"
+          placeholder="Search" style="margin-top: 10px;  border: 1px solid black;">
+      </div>
+    </div>
+
+    <div class="row" style="margin-left: 10%;color: white;">
+      <ng-container *ngFor="let company of companyes | async | filter:name">
+        <div class="col-md-3" style="margin:20px;background-color:#282A35;border-radius: 15px;">
+          <div class="d-flex w-100 justify-content-between">
+            <h6 class="mb-1"><small>Company Name: {{company.name}}</small></h6>
+          </div>
+          <div class="d-flex w-100 justify-content-between">
+            <div class="col-sm-7">
+              <p class="mb-1"><small>Open rate: {{company.open_rate}}</small></p>
+            </div>
+            <div class="col-sm-7">
+              <p class="mb-1"><small>Close rate: {{company.close_rate}}</small> </p>
+            </div>
+          </div>
+          <div class="d-flex w-100 justify-content-between">
+            <div class="col-sm-9">
+              <p class="mb-1"><small>Current rate: {{company.current_rate}}</small></p>
+            </div>
+            <div class="col-sm-3">
+              <button (click)="addToWatchlist(company.company_id, company.name)" type="button" class="btn btn-dark sell"
+                style="background-color: #4CAF50;"><small>ADD</small></button>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+
+    </div>
+  </div>
+</div>
+
+<!-- Home page -->
+
+<div class="container">
+  <div *ngIf="!loginService.isUserLoggedIn()">
+    <div class="row">
+      <div class="col-8">
+        <section>
+          <img class="mySlides"
+            src="https://d3e44x6tjqv3e6.cloudfront.net/sites/default/files/2021-02/Top%205%20mobile%20trading%20apps%20available%20in%20India.jpg"
+            style="width:100%; padding: 0px;border-radius: 8px;height: 410px;">
+        </section>
+      </div>
+      <div class="col-4">
+        <app-login></app-login>
+      </div>
+    </div>
+
+    <br>
+    <!-- dummy data -->
+    <div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+      <div class="container-fluid">
+        <div class="header-body">
+          <!-- Card stats -->
+          <div class="row">
+            <div class="col-xl-3 col-lg-6">
+              <div class="card card-stats mb-4 mb-xl-0">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col" style="text-align: center;">
+                      <h5 class="card-title text-uppercase text-muted mb-0">Traffic</h5>
+                      <span class="h2 font-weight-bold mb-0">350,897</span>
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
+                        <i class="fas fa-chart-bar"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="mt-3 mb-0 text-muted text-sm" style="text-align: center;">
+                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
+                    <span class="text-nowrap">Since last month</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-6">
+              <div class="card card-stats mb-4 mb-xl-0">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col" style="text-align: center;">
+                      <h5 class="card-title text-uppercase text-muted mb-0">Buy</h5>
+                      <span class="h2 font-weight-bold mb-0">2,356</span>
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
+                        <i class="fas fa-chart-pie"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="mt-3 mb-0 text-muted text-sm" style="text-align: center;">
+                    <span class="text-danger mr-2"><i class="fas fa-arrow-down"></i> 3.48%</span>
+                    <span class="text-nowrap">Since last week</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-6">
+              <div class="card card-stats mb-4 mb-xl-0">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col" style="text-align: center;">
+                      <h5 class="card-title text-uppercase text-muted mb-0">Sales</h5>
+                      <span class="h2 font-weight-bold mb-0">924</span>
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
+                        <i class="fas fa-users"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="mt-3 mb-0 text-muted text-sm" style="text-align: center;">
+                    <span class="text-warning mr-2"><i class="fas fa-arrow-down"></i> 1.10%</span>
+                    <span class="text-nowrap">Since yesterday</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-6">
+              <div class="card card-stats mb-4 mb-xl-0">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col" style="text-align: center;">
+                      <h5 class="card-title text-uppercase text-muted mb-0">Performance</h5>
+                      <span class="h2 font-weight-bold mb-0">49,65%</span>
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-info text-white rounded-circle shadow">
+                        <i class="fas fa-percent"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="mt-3 mb-0 text-muted text-sm" style="text-align: center;">
+                    <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 12%</span>
+                    <span class="text-nowrap">Since last month</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br><br>
+    <div class="container-fluid p-3 mb-2 bg-secondary text-white">
+      <section class="w3-container w3-center w3-content" style=" text-align: center;">
+        <h2 class="w3-third" style="padding: 10px;"> THE ATYETI</h2>
+        <p class="w3-opacity"><i>We love Trade Bull</i></p>
+        <p class="w3-justify" style=" padding-left: 100px; padding-right: 100px;">Hi Team! Just to quickly let
+          you know that the project we worked on turned
+          out to be a successful one. Without each one of you, it might not
+          have been possible. And I’d like to thank each one of you for the hard work
+          and all the effort. To show my appreciation. Warm Regards!</p>
+      </section>
+    </div>
+    <!-- vision mission  Members -->
+    <h2 style="padding: 30px;text-align: center;">Our Aim</h2>
+
+    <div class="row">
+      <div class="col">
+        <p> <img
+            src="https://assets-netstorage.groww.in/web-assets/billion_groww_desktop/prod/build/client/images/blog3.5bbd4db3.png"
+            alt="Random Name" style="width:450px;height: 300px;"></p>
+      </div>
+      <div class="col">
+        <p style="margin-top: 50px;">
+          <i>We believe that building wealth is important for anyone’s growth—to improve the quality of their
+            lives
+            and that of their loved ones, and invest in their future. TradeBull was founded on the belief
+            that we could empower and encourage everyone to participate in the equity markets.
+            We achieved this by putting the technology and tools, long available to only a few, into your
+            hands, and strived to make the process of placing a trade seamless, delightful, and cost
+            effective.
+            This has been our goal for the past 10 years and I’m proud to say TradeBull is already one of
+            the best investing platforms in India.
+          </i>
+        </p>
+      </div>
+    </div>
+    <section class="p-3 mb-2 bg-dark text-white">
+      <article class="w3-third">
+        <br>
+        <h2 style="text-align: center;">Our Mission</h2>
+        <br>
+        <br>
+        <p style="margin-left: 100px; margin-right: 100px;">
+          <i> While most investors have faced the brunt of volatility, those with well-diversified
+            portfolios have managed to minimize their losses. Today, we will talk about investors
+            who didn’t pay enough attention to diversification and have a skewed portfolio of market
+            nvestments. With their funds stuck in the markets, is it too late for them to diversify
+            now? Definitely not. In this article, we will share some ways in which you can diversify
+            your existing portfolio and reduce the overall portfolio risks by making smart investment
+            decisions even in the time of market volatility </i>
+        </p>
+      </article> <br> <br>
+    </section>
+
+    <div class="isomerticcard">
+      <div class="card">
+        <div class="imgBx">
+          <img
+            src="https://img.icons8.com/external-itim2101-lineal-itim2101/64/000000/external-trading-mobile-payment-itim2101-lineal-itim2101.png" />
+          <h2>Intraday</h2>
+        </div>
+        <div class="content">
+          <p> Intraday trading, also called day trading, is the buying and selling of stocks and other financial
+            instruments within the same day.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="imgBx">
+          <img
+            src="https://img.icons8.com/external-wanicon-lineal-wanicon/64/000000/external-trading-stock-market-wanicon-lineal-wanicon.png" />
+          <h2>Equity</h2>
+        </div>
+        <div class="content">
+          <p>Equity trading is the buying and selling of company shares or stocks, also known as equities, on the
+            financial market.</p>
+
+        </div>
+      </div>
+      <div class="card">
+        <div class="imgBx">
+          <img src="https://img.icons8.com/ios/50/000000/money-bag-franc.png" />
+          <h2>Derivative</h2>
+        </div>
+        <div class="content">
+          <p>A derivative is a complex type of financial security that is set between two or more parties.</p>
+
+        </div>
+      </div>
+    </div>
+    <div class="parallax"></div>
+
+    <div
+      style="height:100px;background-color:rgb(145, 151, 163);font-size:16px;color: white;padding-left: 90px;padding-right: 90px;padding-top: 20px;">
+      Trading can be a thrilling way to earn quick cash. However, like with gambling, it can also quickly lead to big
+      losses. Investing usually means smaller short-term wins, but also fewer severe losses. If you're comfortable with
+      the risks, trading with a portion of your money can be enjoyable and could lead to profits.
+    </div>
+    <div class="row">
+      <div class="col">
+        <img
+          src="https://assets-netstorage.groww.in/web-assets/billion_groww_desktop/prod/build/client/images/blog1.d3a78143.png"
+          alt="Snow" style="width:200px;height: 150px;margin-left: 110px; margin-top: 50px;">
+      </div>
+      <div class="col">
+        <img
+          src="https://assets-netstorage.groww.in/web-assets/billion_groww_desktop/prod/build/client/images/blog2.2eea33cc.png"
+          alt="Forest" style="width:200px;height: 150px; padding: 0px;margin-left: 50px;margin-top: 50px;">
+      </div>
+      <div class="col">
+        <img
+          src="https://assets-netstorage.groww.in/web-assets/billion_groww_desktop/prod/build/client/images/blog3.5bbd4db3.png"
+          alt="Mountains"
+          style="width:200px;height: 150px; padding-bottom: 10px; margin-bottom: 20px;margin-top: 50px;">
+      </div>
+    </div>
+    <app-footer></app-footer>
+</div>
+    
+  </div>

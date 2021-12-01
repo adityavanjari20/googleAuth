@@ -1,0 +1,59 @@
+.heading{
+    text-align: center;
+    margin-top: 50px;
+    width:90%;
+    margin-left: 5%;
+}
+
+
+.noData
+{
+    margin-top:150px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+tr:hover
+{
+    background-color: rgb(182, 179, 179) !important;    
+}
+.force-overflow
+{
+	min-height:400px;
+}
+
+#tableID::-webkit-scrollbar-track
+{
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	
+}
+
+
+h2{
+    text-align: center;
+    margin-top: 3%;
+   
+  }
+
+  tr{
+      font-weight: bold;
+      background-color: rgb(226, 224, 224);
+      color: black;
+  }
+
+
+   
+  th {
+    background-color: rgb(92, 91, 91);
+    color: white;
+    width:10%;
+    margin-left:100px;
+  }
+    
+
+.cname{
+    color: rgb(53, 78, 47);
+}
+
+
+

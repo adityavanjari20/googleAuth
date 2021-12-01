@@ -1,0 +1,126 @@
+<body>
+    <div class="col-md-6 offset-md-3">
+    <br><br>
+        <form action=""  (ngSubmit)="onSubmit()">
+                      
+            <div class="sub-entry">
+                    <div class="noData">
+                <label for="">Company Name</label>
+                <input type="text" required class="form-control" name="name" [(ngModel)]="company.name" style="width: 250px;">
+            </div>
+           
+            <div class="noData">
+                <label for="">Open Price</label>
+                <input type="text" required class="form-control" name="open_rate" [(ngModel)]="company.open_rate" #open_rate="ngModel" pattern="[0-9]*" style="width: 250px;">
+                <div *ngIf="open_rate.invalid" class="text-danger warningMessage">
+                    <div *ngIf="open_rate.errors.pattern">
+                       Only Digits allow
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="noData">
+                <label for="">Close Price</label>
+                <input type="text" required class="form-control" name="close_rate" [(ngModel)]="company.close_rate" #close_rate="ngModel" pattern="[0-9]*"style="width: 250px;">
+                <div *ngIf="close_rate.invalid" class="text-danger warningMessage">
+                    <div *ngIf="close_rate.errors.pattern">
+                       Only Digits allow
+                    </div>
+                    
+                </div>
+    
+            </div>
+            <div class="noData">
+                <label for="">Least Price</label>
+                <input type="text" required class="form-control" name="least_rate" [(ngModel)]="company.least_rate" #least_rate="ngModel" pattern="[0-9]*"style="width: 250px;">
+                <div *ngIf="least_rate.invalid" class="text-danger warningMessage">
+                    <div *ngIf="least_rate.errors.pattern">
+                       Only Digits allow
+                    </div>
+            </div>
+            </div>
+            <div class="noData">
+                <label for="">Peak Price</label>
+                <input type="text" required name="peak_rate" [(ngModel)]="company.peak_rate" class="form-control" #peak_rate="ngModel" pattern="[0-9]*"style="width: 250px;">
+                <div *ngIf="peak_rate.invalid" class="text-danger warningMessage">
+                    <div *ngIf="peak_rate.errors.pattern">
+                       Only Digits allow
+                    </div>
+            </div>
+            </div>
+        
+           
+            <div class="noData">
+                <label for="">Year Low</label>
+                <input type="text" required name="year_low" [(ngModel)]="company.year_low" class="form-control" #year_low="ngModel" pattern="[0-9]*"style="width: 250px;">
+                <div *ngIf="year_low.invalid" class="text-danger warningMessage">
+                    <div *ngIf="year_low.errors.pattern">
+                       Only Digits allow
+                    </div>
+            </div>
+            </div>
+        </div>
+        <div class="sub-entry1">
+            <div class="noData">
+                <label for="">Year High</label>
+                <input type="text" required name="year_high" [(ngModel)]="company.year_high" class="form-control" #year_high="ngModel" pattern="[0-9]*"style="width: 250px;">
+                <div *ngIf="year_high.invalid" class="text-danger warningMessage">
+                    <div *ngIf="year_high.errors.pattern">
+                       Only Digits allow
+                    </div>
+            </div>
+            </div>
+    
+            <div class="noData">
+                <label for="">P E Ratio</label>
+                <input type="text" required name = "p_e_ratio"[(ngModel)] ="company.p_e_ratio" class="form-control" #p_e_ratio="ngModel" pattern="[0-9]*"style="width: 250px;">
+                <div *ngIf="p_e_ratio.invalid" class="text-danger warningMessage">
+                    <div *ngIf="p_e_ratio.errors.pattern">
+                       Only Digits allow
+                    </div>
+            </div>
+            </div>
+    
+            <div class="noData">
+                <label for="">Market Cap</label>
+                <input type="text" required name="market_cap" [(ngModel)] ="company.market_cap" class="form-control" #market_cap="ngModel" pattern="[0-9]*"style="width: 250px;">
+                <div *ngIf="market_cap.invalid" class="text-danger warningMessage">
+                    <div *ngIf="market_cap.errors.pattern">
+                       Only Digits allow
+                    </div>
+            </div>
+            </div>
+    
+            <div class="noData">
+                <label for="">Quantity</label>
+                <input type="text" required name="volume" [(ngModel)]="company.volume" class="form-control" #volume="ngModel" pattern="[0-9]*"style="width: 250px;">
+                <div *ngIf="volume.invalid" class="text-danger warningMessage">
+                    <div *ngIf="volume.errors.pattern">
+                       Only Digits allow
+                    </div>
+            </div>
+            </div>
+            <div class="noData">
+                <label for="">Price</label>
+                <input type="text" required name= "current_rate" [(ngModel)]="company.current_rate" class="form-control" #current_rate="ngModel" pattern="[0-9]*" style="width: 250px;">
+                <div *ngIf="current_rate.invalid" class="text-danger warningMessage">
+                    <div *ngIf="current_rate.errors.pattern">
+                       Only Digits allow
+                    </div>
+            </div>
+            </div>
+          <br>
+          <div class="button">
+            <button class="btn btn-primary buy-btn" type="submit" style="width: 90px;"> Update</button>
+            &nbsp;
+           <button class="btn btn-primary buy-btn"  (click)="gotoadmin()" type="submit" style="background-color: red; width:100px;">Cancel</button>
+            </div>
+            
+                
+              
+            </div>
+        </form>
+    
+    </div>
+    </body>
+    

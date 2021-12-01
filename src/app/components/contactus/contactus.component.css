@@ -1,0 +1,21 @@
+.tab{
+    /*background-size: auto;
+    background-image: url("https://st2.depositphotos.com/1265075/7446/i/950/depositphotos_74468913-stock-photo-contact-us-icons-on-cubes.jpg");*/
+    background-color: black;
+    align-items: center;
+}
+
+.map-container{
+overflow:hidden;
+padding-bottom:56.25%;
+position:relative;
+height:0;
+}
+.map-container iframe{
+left:0;
+top:0;
+height:50%;
+width:50%;
+position:absolute;
+}
+

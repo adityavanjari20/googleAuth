@@ -1,0 +1,50 @@
+ 
+<div class="heading">
+    <h2>Watch List Company</h2><br>
+    <div *ngIf="watchList" class="table-responsive-md " > 
+       
+        <table class="table table-borderles table-hover">
+                <thead>
+                <tr>
+                    <th >Company Name</th>
+                    <th>Open Rate</th>
+                    <th>Close Rate</th>
+                    <th>Today's Peak Price</th>
+                    <th>Today's Low Price</th>
+                    <th>Current Rate</th>
+                    <th>Year Low</th>
+                    <th>Year High</th>
+                    <th></th>
+                    <th>Action</th>
+                    <th></th>
+                </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let elements of watchList">
+                        <td class="cname">{{elements.name}}</td>
+                        <td>{{elements.open_rate}}</td>
+                        <td>{{elements.close_rate}}</td>
+                        <td>{{elements.peak_rate}}</td>
+                        <td>{{elements.least_rate}}</td>
+                        <td>{{elements.current_rate}}</td>
+                        <td>{{elements.year_low}}</td>
+                        <td>{{elements.year_high}}</td>
+                        <td>
+                            <button (click)="goToDetailedView(elements.company_id)" type="button" class="btn btn-outline-primary">Details</button>
+                        </td>
+                        <td>                                 
+                            <button (click)="goToBuyPage(elements.company_id)" type="button" class="btn btn-outline-success">Buy</button>
+                        </td>
+                        <td>
+                            <button (click)="removeFromWatchlist(elements.company_id,elements.name)" type="button" class="btn btn-outline-danger">Remove</button>                        </td>
+                    </tr>   
+                    
+                </tbody>
+        </table>        
+    </div>
+
+    <p *ngIf="!watchList" class="noData">
+        Nothing available in your watchList
+    </p>     
+</div> 
